@@ -1,0 +1,14 @@
+﻿@model SistemaDeAgendamentos.Models.Agendamento
+
+<h2>Excluir Agendamento</h2>
+
+<p>Tem certeza que deseja excluir este agendamento?</p>
+<p><strong>Nome:</strong> @Model.Nome</p>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Data e Hora:</strong> @Model.DataHora.ToString("dd/MM/yyyy HH:mm")</p>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Excluir</button>
+    <a asp-action="Index">Cancelar</a>
+</form>

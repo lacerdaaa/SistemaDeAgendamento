@@ -1,0 +1,32 @@
+﻿@model List<SistemaDeAgendamentos.Models.Agendamento>
+
+<h2>Agendamentos</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Novo Agendamento</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-light">
+        <tr>
+            <th>Nome</th>
+            <th>Data</th>
+            <th>Serviço</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.DataHora.ToString("dd/MM/yyyy")</td>
+                <td>@item.Servico</td>  <!-- Certifique-se que exista essa propriedade -->
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

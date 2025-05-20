@@ -1,0 +1,24 @@
+﻿@model SistemaDeAgendamentos.Models.Agendamento
+
+<h2>Novo Agendamento</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Servico"></label>
+        <input asp-for="Servico" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DataHora"></label>
+        <input asp-for="DataHora" type="datetime-local" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</form>

@@ -1,0 +1,12 @@
+﻿@model SistemaDeAgendamentos.Models.Agendamento
+
+<h2>Detalhes do Agendamento</h2>
+
+<p><strong>Nome:</strong> @Model.Nome</p>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Serviço:</strong> @Model.Servico</p>
+<p><strong>Data e Hora:</strong> @Model.DataHora.ToString("dd/MM/yyyy HH:mm")</p>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Excluir</a>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>
